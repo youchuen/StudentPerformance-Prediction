@@ -1,0 +1,39 @@
+seed: 42
+test_size: 0.2
+grid_k_fold: 3
+lr_max_iter: 1000
+rf_n_estimators: 300
+rf_grid:
+  clf__n_estimators: [200, 400, 600]
+  clf__max_depth: [None, 10, 20, 30]
+  clf__min_samples_leaf: [1, 2, 4]
+xgb_eval_metric: "mlogloss"
+xgb_grid:
+  clf__n_estimators: [100, 200]
+  clf__max_depth: [3, 6, 10]
+  clf__learning_rate: [0.01, 0.1, 0.2]
+  clf__subsample: [0.8, 1.0]
+selected_features:
+  - "Curricular units 2nd sem (approved)"
+  - "Curricular units 2nd sem (grade)"
+  - "Curricular units 2nd sem (evaluations)"
+  - "Curricular units 1st sem (approved)"
+  - "Curricular units 1st sem (grade)"
+  - "Curricular units 1st sem (evaluations)"
+  - "Tuition fees up to date"
+  - "Age at enrollment"
+  - "Mother's occupation"
+  - "Admission grade"
+  - "Previous qualification (grade)"
+  - "Gender"
+  - "Father's occupation"
+  - "Debtor"
+  - "Application order"
+  - "Daytime/evening attendance"
+  - "Previous qualification"
+default_target: "Target"
+bin_cols:
+  - "Father's occupation"
+  - "Mother's occupation"
+  - "Curricular units 2nd sem (evaluations)"
+  - "Curricular units 1st sem (evaluations)"
